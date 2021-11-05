@@ -103,21 +103,49 @@ console.log(`I ${callOnMe()} my mom today!`)// Call the function directly where 
 
 //? SPLIT THE TASKS AND LOGIC -
 /*
-    function makePizzaFromRecipe() {
+let recipe1 = {
+    name: 'hawaiian style',
+    toppings: ['pineapple', 'ham'],
+    sauce: ['tomato'],
+    dough: [],
+    instructions: {
+        doughPrep: '',
+        toppingPrep: '',
+        saucePrep: '',
+        cookingPrep: '',
+        etc: ''
+    }
+}
 
-        getDoughIngredients();
-        
-        getSauceIngredients();
+let recipe2 = {}
+Object.assign(recipe2, recipe1, {
+    name: 'meat lovers',
+    toppings: ['bacon', 'pepperoni'],
+    instructions: {
+        ...recipe1.instructions,
+        cookingPrep: 'cook longer than 18min'
+    }
+})
 
-        getToppingIngredients();
+console.log({ recipe1 });
+console.log({ recipe2 });
 
-        prepareDough();
 
-        prepareSauce();
-        
+
+    function makePizzaFromRecipe(recipeParam) {
+
+        const {instructions: {cookingPrep, doughPrep, toppingPrep, saucePrep}, toppings, sauce, dough} = recipe2
+
+        prepareDough(getDoughIngredients(dough), doughPrep);
+
+        prepareSauce(getSauceIngredients(sauce), saucePrep);
+
+        prepareToppings(getToppingIngredients(toppings), toppingPrep);
+
+        beginCooking(cookingPrep)
         ...
     };
-
+    
 -Reusability:
     Make a pizza...
     makePizzaFromRecipe();
