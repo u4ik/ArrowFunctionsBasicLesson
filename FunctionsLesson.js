@@ -145,16 +145,17 @@ console.log({ recipe2 });
         beginCooking(cookingPrep)
         ...
     };
-    
+
 -Reusability:
     Make a pizza...
-    makePizzaFromRecipe();
-    Make another pizza..
-    makePizzaFromRecipe();
+    makePizzaFromRecipe(recipe1);
+    
+    Make another different pizza..
+    makePizzaFromRecipe(recipe2);
 
     Make 10 pizzas!
     for(let i = 0; i < 10; i++){
-        makePizzaFromRecipe();
+        makePizzaFromRecipe(recipe1);
     };
 */
 
