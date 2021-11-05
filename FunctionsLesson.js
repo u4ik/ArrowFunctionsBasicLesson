@@ -130,11 +130,7 @@ Object.assign(recipe2, recipe1, {
 console.log({ recipe1 });
 console.log({ recipe2 });
 
-
-
-    function makePizzaFromRecipe(recipeParam) {
-
-        const {instructions: {cookingPrep, doughPrep, toppingPrep, saucePrep}, toppings, sauce, dough} = recipe2
+    function makePizzaFromRecipe({ instructions: {cookingPrep, doughPrep, toppingPrep, saucePrep}, toppings, sauce, dough}) {
 
         prepareDough(getDoughIngredients(dough), doughPrep);
 
@@ -149,7 +145,7 @@ console.log({ recipe2 });
 -Reusability:
     Make a pizza...
     makePizzaFromRecipe(recipe1);
-    
+
     Make another different pizza..
     makePizzaFromRecipe(recipe2);
 
